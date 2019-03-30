@@ -1,11 +1,12 @@
 $(document).ready(function(){
+	 
   $(".slider-carousel").owlCarousel({
   		loop: true,
   		nav: true,
   		items: 3,
   		center: true,
   		smartSpeed: 700,
-  		navText: ['<i class="fas fa-long-arrow-alt-left"></i>', '<i class="fas fa-long-arrow-alt-right"></i>'],
+  		navText: ['<i id="id2" class="fas fa-long-arrow-alt-left"></i>', '<i id="id1" class="fas fa-long-arrow-alt-right"></i>'],
   		responsiveClass: true,
   		responsive: {
   			0: {
@@ -16,8 +17,9 @@ $(document).ready(function(){
   			}
   		}
   });
+  
   jQuery('section, .s-item').addClass("hidden").viewportChecker({
 	classToAdd: 'visible animated fadeInLeft',
 	offset: 100
-});
+	});
 });
