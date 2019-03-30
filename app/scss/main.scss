@@ -13,12 +13,6 @@ input[type=text], input[type=submit], textarea{
 	border-radius: 0;
 }
 
-
-
-::selection {
-	background-color: $accent;
-	color: #fff;
-}
 p {
 	margin: 0;
 	color: rgb(27, 27, 36);
@@ -278,6 +272,7 @@ section {
 
 .owl-theme .owl-nav [class*=owl-]:hover {
 	background-color: transparent;
+	
 }
 .owl-theme .owl-nav {
 	margin: 40px;
@@ -287,14 +282,15 @@ section {
 	right:0;
 	bottom:-10px;	
 } 
-
-.owl-prev i:hover {
+%hover {
 	transition: all 0.2s;
 	color: $accent;
 }
-.owl-next i:hover {
-	transition: all 0.2s;
-	color: $accent;
+.owl-prev:hover i {
+	@extend%hover;
+}
+.owl-next:hover i {
+	@extend%hover;
 }	
 .s-slider2 {
 	background-color: #fff;
