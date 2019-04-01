@@ -67,6 +67,26 @@ gulp.task('rsync', function() {
 		compress: true
 	}))
 });
+gulp.task('prebuild', async function() {
+
+    var buildCss = gulp.src([ // Переносим библиотеки в продакшен 
+        'app/css/main.min.css'
+        ])
+    .pipe(gulp.dest('dist/css'))
+
+    var buildImg = gulp.src('app/img/**/*') // Переносим шрифты в продакшен
+    .pipe(gulp.dest('dist/img'))
+
+    var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
+    .pipe(gulp.dest('dist/fonts'))
+
+    var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
+    .pipe(gulp.dest('dist/js'))
+
+    var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
+    .pipe(gulp.dest('dist'));
+
+});
 
 if (gulpversion == 3) {
 	gulp.task('watch', ['styles', 'scripts', 'browser-sync'], function() {
